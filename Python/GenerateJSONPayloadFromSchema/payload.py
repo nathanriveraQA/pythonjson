@@ -87,6 +87,13 @@ value ={
 save_file = open("saveHIGdata.json", "w")  
 json.dump(value, save_file, indent = 6)  
 save_file.close()  
+def writeToJSONFile(path, fileName, data):
+    filePathNameWExt =  path + '/' + fileName + '.json'
+    with open(filePathNameWExt, 'a') as fp:
+        json.dump(data, fp)
+        fp.write(data)
+
+writeToJSONFile("C:\Temp", "payloadPython", "payloadData")
 # df = pd.read_json('data.json')
 #
 # print(df.to_string())
